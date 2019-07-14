@@ -7,15 +7,21 @@
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.4",
+    "concurrently": "^4.1.1",
     "express": "^4.17.1",
     "ignore-styles": "^5.0.1",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "redux": "^4.0.4"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
   },
   "scripts": {
+    "all": "concurrently --kill-others-on-fail \"npm run build\" \"npm run server\" \"npm run start\"",
+    "server": "node server/index.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test"

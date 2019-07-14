@@ -3,8 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
+import store from './store';
 
-ReactDOM.hydrate(<App />, document.getElementById('root'));
+window.store = store;
+
+const rootNode = document.getElementById('root');
+const renderOrHydrate = rootNode.innerHTML.trim().length ? 'hydrate' : 'render';
+
+ReactDOM[renderOrHydrate](
+	<Provider store={store}>
+		<App /> 
+	</Provider>,
+	rootNode
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

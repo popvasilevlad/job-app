@@ -9,22 +9,15 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-const Home = () => {
-	console.log('home')
+const HomeComponent = () => {
+	console.log('render home');
+
 	return (
 		<div>HOME</div>
 	)
 }
 
-
-// class HomeClass extends Component {
-// 	render() {
-// 		console.log('rendere Home')
-// 		this.props.loadHome();
-		
-// 	}
-// }
-
-// const Home = withRouter(connect('', mapDispatchToProps)(HomeClass));
+const Home = withRouter(connect('', mapDispatchToProps)(HomeComponent));
 
 export default Home;
+

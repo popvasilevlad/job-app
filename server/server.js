@@ -32,6 +32,15 @@ router.use(
   express.static(path.resolve(__dirname, '..', 'build'), { maxAge: '30d' })
 )
 
+var file = fs.readFileSync('./server/data.json', 'utf8');
+
+app.get('/api/jobs', (req, res) => {
+  // console.log(req.query);
+  // console.log(req.query.id);
+
+  res.end(JSON.parse(JSON.stringify(file)));
+});
+
 // tell the app to use the above rules
 app.use(router)
 

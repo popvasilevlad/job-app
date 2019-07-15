@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-export default class Result extends PureComponent {
+export default class ResultDetails extends PureComponent {
 	render() {
 		console.log('render result details');
 

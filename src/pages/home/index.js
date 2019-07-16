@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { fetchJobs } from '../actions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import JobCard from './job-card';
-import Grid from '@material-ui/core/Grid';
-import LoadingSpinner from './loading-spinner';
+import { fetchJobs } from '../../actions';
+import JobCard from '../../components/job-card/index.js';
+import LoadingSpinner from '../../components/loading-spinner';
+import StyledElements from './style';
+import { Typography, Grid } from '@material-ui/core';
 
 class HomeComponent extends Component {
 	componentDidMount() {
@@ -12,8 +13,11 @@ class HomeComponent extends Component {
 	}
 
 	render() {
-		const { jobs, loading } = this.props;
-		
+        const {
+            jobs,
+            loading
+        } = this.props;
+    
 		if (loading) {
 			return(
 				<LoadingSpinner size={60}/>
@@ -22,15 +26,20 @@ class HomeComponent extends Component {
 		
 		return (
 			<div>
-				<Grid container spacing={3}>
+				<StyledElements.Header>
+					<Typography variant="h3">The largest jobs platform in the world.</Typography>
+					<br/>
+					<Typography variant="h5">Find your future job now!</Typography>
+				</StyledElements.Header>
+				<StyledElements.GridElement container spacing={3}>
 					{
 						jobs.map(job => (
 							<Grid item key={job.id} xs={12} sm={6} md={4}>
-								<JobCard data={job}/>
+								<JobCard job={job}/>
 							</Grid>
 						))
 					}
-				</Grid>
+				</StyledElements.GridElement>
 			</div>
 		)
 	}

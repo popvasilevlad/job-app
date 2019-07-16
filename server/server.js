@@ -35,10 +35,17 @@ router.use(
 var file = fs.readFileSync('./server/data.json', 'utf8');
 
 app.get('/api/jobs', (req, res) => {
-  // console.log(req.query);
-  // console.log(req.query.id);
+  const jobs = JSON.parse(file);
+  const id = req.query.id;
 
-  res.end(JSON.parse(JSON.stringify(file)));
+  if (id) {
+    const result = jobs.find(function(job) {
+      return job.id === parseInt(id);
+    })
+    res.end(JSON.stringify(result));
+  }
+
+  res.end(JSON.stringify(jobs));
 });
 
 // tell the app to use the above rules

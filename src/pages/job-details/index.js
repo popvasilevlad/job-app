@@ -2,11 +2,12 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { fetchJobData } from '../../actions';
 import LoadingSpinner from '../../components/loading-spinner';
-import StyledElements from './style';
+import Styled from './style';
 import { Grid, Button } from '@material-ui/core';
 import { iconsCategoryMap } from '../../constants/utils';
+import NotFound from '../not-found';
 
-class JobDetailsClass extends PureComponent {
+class JobDetailsPage extends PureComponent {
 	componentDidMount() {
 		const { id } = this.props.match.params;
 		this.props.fetchJobData(id);
@@ -21,9 +22,15 @@ class JobDetailsClass extends PureComponent {
 			)
 		}
 
+		if (data.code === 'not_found') {
+			return (
+				<NotFound />
+			)
+		}
+
 		return (
-			<StyledElements.Container>
-				<StyledElements.CardElement>
+			<Styled.Container>
+				<Styled.CardElement>
 					<Grid container spacing={3}>
 						<Grid item xs={12} md={4} align={'center'}>
 							<div>
@@ -32,34 +39,34 @@ class JobDetailsClass extends PureComponent {
 								</i>
 							</div>
 							<br/>
-							<StyledElements.JobDetailsTitle variant="h1">
+							<Styled.JobDetailsTitle variant="h1">
 								{data.title}
-							</StyledElements.JobDetailsTitle>
+							</Styled.JobDetailsTitle>
 							<br/>
 							{data.employment_type}<br/>
 						</Grid>
 						<Grid item xs={12} md={8} >
-							<StyledElements.DescriptionSection>
-								<StyledElements.DescriptionTitle variant="h6">Description:</StyledElements.DescriptionTitle>
+							<Styled.DescriptionSection>
+								<Styled.DescriptionTitle variant="h6">Description:</Styled.DescriptionTitle>
 								{data.description}
-							</StyledElements.DescriptionSection>
-							<StyledElements.DescriptionSection>
-								<StyledElements.DescriptionTitle variant="h6">What you have:</StyledElements.DescriptionTitle>
+							</Styled.DescriptionSection>
+							<Styled.DescriptionSection>
+								<Styled.DescriptionTitle variant="h6">What you have:</Styled.DescriptionTitle>
 								{data.description}
-							</StyledElements.DescriptionSection>
-							<StyledElements.DescriptionSection>
-								<StyledElements.DescriptionTitle variant="h6">What we offer:</StyledElements.DescriptionTitle>
+							</Styled.DescriptionSection>
+							<Styled.DescriptionSection>
+								<Styled.DescriptionTitle variant="h6">What we offer:</Styled.DescriptionTitle>
 								{data.description}
-							</StyledElements.DescriptionSection>
+							</Styled.DescriptionSection>
 						</Grid>
 					</Grid>
-				</StyledElements.CardElement>
+				</Styled.CardElement>
 				<Grid container justify="center">
 					<Button variant="contained" color="secondary" size="large">
 						Apply now
 					</Button>
 				</Grid>
-			</StyledElements.Container>
+			</Styled.Container>
 		)
 	}
 }
@@ -77,6 +84,6 @@ const mapStateToProps = state => {
 	}
 }
 
-const JobDetails = connect(mapStateToProps, mapDispatchToProps)(JobDetailsClass);
+const JobDetails = connect(mapStateToProps, mapDispatchToProps)(JobDetailsPage);
 
 export default JobDetails;

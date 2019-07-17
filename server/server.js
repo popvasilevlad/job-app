@@ -41,7 +41,12 @@ app.get('/api/jobs', (req, res) => {
   if (id) {
     const result = jobs.find(function(job) {
       return job.id === parseInt(id);
-    })
+    });
+
+    if (!result) {
+      res.status(404);
+      res.end(JSON.stringify({ error: 'Job does not exist in the database', code: 'not_found' }));
+    }
     res.end(JSON.stringify(result));
   }
 

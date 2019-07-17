@@ -11,3 +11,7 @@ export const iconsCategoryMap = {
 	shop: 'store_mall_directory',
 	kids: 'child_friendly'
 }
+
+export const defaultColors = {
+	blue_1: '#27858a'
+}

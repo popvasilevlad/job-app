@@ -10,9 +10,9 @@ const GridElement = styled(Grid)`
 	padding: 30px 0;
 `;
 
-const StyledElements = {
+const Styled = {
     Header,
     GridElement
 };
 
-export default StyledElements;
+export default Styled;

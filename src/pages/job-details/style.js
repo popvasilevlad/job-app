@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Card, Typography } from '@material-ui/core';
+import { defaultColors } from '../../constants/utils';
 
 const Container = styled.div`
     margin: 80px 0;
@@ -19,7 +20,7 @@ const JobDetailsTitle = styled(Typography)`
         font-weight: 800;
         opacity: 0.8;
         font-size: 40px;
-        color: #27858a;
+        color: ${defaultColors.blue_1};
         letter-spacing: 0.05em;
     }
 `;
@@ -40,7 +41,7 @@ const DescriptionTitle = styled(Typography)`
 `;
 
 
-const StyledElements = {
+const Styled = {
     Container,
     CardElement,
     DescriptionSection,
@@ -48,4 +49,4 @@ const StyledElements = {
     JobDetailsTitle
 }
 
-export default StyledElements;
+export default Styled;

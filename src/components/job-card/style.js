@@ -1,5 +1,6 @@
 import { Card, CardContent } from '@material-ui/core';
 import styled from 'styled-components';
+import { defaultColors } from '../../constants/utils';
 
 export const CardElement = styled(Card)`
 	&& {
@@ -30,7 +31,7 @@ const TopCardSection = styled.div`
 const JobTitle = styled.div`
 	margin-top: 10px;
     font-weight: 800;
-    color: #27858a;
+    color: ${defaultColors.blue_1};
     font-size: 22px;
     opacity: 0.8;
     margin-top: 10px;
@@ -56,7 +57,7 @@ const BottomCardSection = styled.div`
 	}
 `;
 
-const StyledCard = {
+const Styled = {
     CardContentElement,
     CardElement,
     JobTitle,
@@ -65,4 +66,4 @@ const StyledCard = {
     BottomCardSection
 };
 
-export default StyledCard;
+export default Styled;

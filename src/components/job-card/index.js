@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { iconsCategoryMap } from '../../constants/utils';
-import StyledCard from './style';
+import Styled from './style';
 
 const JobCard = props => {
     const {
@@ -13,29 +13,29 @@ const JobCard = props => {
 
     return(
         <Link to={`/job/${id}`}>
-            <StyledCard.CardElement>
-                <StyledCard.CardContentElement>
-                    <StyledCard.TopCardSection>
+            <Styled.CardElement>
+                <Styled.CardContentElement>
+                    <Styled.TopCardSection>
                         <i className="material-icons">
                             {iconsCategoryMap[category]}
                         </i>
-                        <StyledCard.JobTitle variant="h6" component="h2">
+                        <Styled.JobTitle variant="h6" component="h2">
                             {title}
-                        </StyledCard.JobTitle>
-                        <StyledCard.JobSubTitle>
+                        </Styled.JobTitle>
+                        <Styled.JobSubTitle>
                             {employment_type}
-                        </StyledCard.JobSubTitle>
-                    </StyledCard.TopCardSection>
-                    <StyledCard.BottomCardSection>
+                        </Styled.JobSubTitle>
+                    </Styled.TopCardSection>
+                    <Styled.BottomCardSection>
                             <div>
                                 <i className="material-icons">
                                     arrow_forward
                                 </i>
                             </div>
                             View more
-                    </StyledCard.BottomCardSection>
-                </StyledCard.CardContentElement>
-            </StyledCard.CardElement>
+                    </Styled.BottomCardSection>
+                </Styled.CardContentElement>
+            </Styled.CardElement>
         </Link>
     );
 }

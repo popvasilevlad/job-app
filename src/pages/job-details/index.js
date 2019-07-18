@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchJobData } from '../../actions';
 import LoadingSpinner from '../../components/loading-spinner';
 import Styled from './style';
-import { Grid, Button } from '@material-ui/core';
+import { Grid, Button, Container} from '@material-ui/core';
 import { iconsCategoryMap } from '../../constants/utils';
 import NotFound from '../not-found';
 
@@ -61,11 +61,11 @@ class JobDetails extends Component {
 						</Grid>
 					</Grid>
 				</Styled.CardElement>
-				<Grid container justify="center">
+				<Container align="center">
 					<Button variant="contained" color="secondary" size="large">
 						Apply now
 					</Button>
-				</Grid>
+				</Container>
 			</Styled.Container>
 		)
 	}

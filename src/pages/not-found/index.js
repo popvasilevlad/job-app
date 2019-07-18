@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 
 const NotFound = () => {
 	const [redirect, setRedirect] = useState(false);
-	
+
 	if (redirect) {
 		return (
 			<Redirect to="/" />
@@ -13,7 +13,7 @@ const NotFound = () => {
 	}
 
 	return (
-		<Styled.Container>
+		<Styled.Container id="not-found-page">
 			<Styled.GridElement className={'testtt'} container>
 				<Grid item sm={12} md={3}>
 					<Styled.Heading variant={'h1'}>
@@ -29,6 +29,7 @@ const NotFound = () => {
 					</Styled.Heading>
 					<Styled.ButtonContainer>
 						<Button
+							id='redirect-to-home-btn'
 							variant="contained"
 							color="secondary"
 							size="large"

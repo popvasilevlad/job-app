@@ -33,7 +33,6 @@ export const fetchJobDataSuccess = data => {
 }
 
 export const fetchJobDataError = error => {
-    console.log('fetch jobs error')
     return {
         type: ACTIONS.FETCH_JOB_DATA_FAIL,
         payload: { error }

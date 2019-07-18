@@ -7,7 +7,7 @@ import LoadingSpinner from '../../components/loading-spinner';
 import Styled from './style';
 import { Typography, Grid } from '@material-ui/core';
 
-class HomePage extends Component {
+class Home extends Component {
 	componentDidMount() {
 		this.props.fetchJobs();
 	}
@@ -58,7 +58,6 @@ const mapStateToProps = state => {
 	}
 }
 
-const Home = withRouter(connect(mapStateToProps, mapDispatchToProps)(HomePage));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Home));
 
-export default Home;
 

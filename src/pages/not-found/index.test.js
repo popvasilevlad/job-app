@@ -1,4 +1,4 @@
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import NotFound from './index';
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -31,5 +31,4 @@ describe('[404 page]', () => {
         container.find('button').simulate('click');
         expect(container.find('#not-found-page').length).toBe(0);
     });
-    
 });

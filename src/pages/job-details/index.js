@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchJobData } from '../../actions';
 import LoadingSpinner from '../../components/loading-spinner';
@@ -7,7 +7,7 @@ import { Grid, Button } from '@material-ui/core';
 import { iconsCategoryMap } from '../../constants/utils';
 import NotFound from '../not-found';
 
-class JobDetailsPage extends PureComponent {
+class JobDetails extends Component {
 	componentDidMount() {
 		const { id } = this.props.match.params;
 		this.props.fetchJobData(id);
@@ -84,6 +84,4 @@ const mapStateToProps = state => {
 	}
 }
 
-const JobDetails = connect(mapStateToProps, mapDispatchToProps)(JobDetailsPage);
-
-export default JobDetails;
+export default connect(mapStateToProps, mapDispatchToProps)(JobDetails);

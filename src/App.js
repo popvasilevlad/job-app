@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 		error: state.error
 	}
 }
-class AppClass extends Component {
+class App extends Component {
 	render() {
 		if (this.props.error) {
 			return (
@@ -40,6 +40,4 @@ class AppClass extends Component {
 	}
 }
 
-const App = connect(mapStateToProps, '')(AppClass);
-
-export default App;
+export default connect(mapStateToProps, '')(App);

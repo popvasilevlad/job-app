@@ -25,7 +25,7 @@ class HomePage extends Component {
 		}
 		
 		return (
-			<div>
+			<div id="home-page">
 				<Styled.Header>
 					<Typography variant="h3">The largest jobs platform in the world.</Typography>
 					<br/>

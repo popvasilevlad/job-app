@@ -13,16 +13,23 @@ const JobCard = props => {
 
     return(
         <Link to={`/job/${id}`}>
-            <Styled.CardElement>
+            <Styled.CardElement id={'job-card'}>
                 <Styled.CardContentElement>
                     <Styled.TopCardSection>
-                        <i className="material-icons">
+                        <i 
+                            id="job-card-icon"
+                            className="material-icons"
+                        >
                             {iconsCategoryMap[category]}
                         </i>
-                        <Styled.JobTitle variant="h6" component="h2">
+                        <Styled.JobTitle
+                            id="job-card-title"
+                            variant="h6"
+                            component="h2"
+                        >
                             {title}
                         </Styled.JobTitle>
-                        <Styled.JobSubTitle>
+                        <Styled.JobSubTitle id="job-card-type">
                             {employment_type}
                         </Styled.JobSubTitle>
                     </Styled.TopCardSection>

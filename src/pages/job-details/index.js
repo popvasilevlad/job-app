@@ -29,7 +29,7 @@ class JobDetailsPage extends PureComponent {
 		}
 
 		return (
-			<Styled.Container>
+			<Styled.Container id="job-details-container">
 				<Styled.CardElement>
 					<Grid container spacing={3}>
 						<Grid item xs={12} md={4} align={'center'}>

@@ -4,7 +4,7 @@ import SpinnerWrapper from './style';
 
 const LoadingSpinner = () => (
     <SpinnerWrapper>
-        <CircularProgress size={60} />
+        <CircularProgress id="circular-progress" size={60} />
     </SpinnerWrapper>
 );
 

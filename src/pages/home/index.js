@@ -13,10 +13,7 @@ class Home extends Component {
 	}
 
 	render() {
-        const {
-            jobs,
-            loading
-        } = this.props;
+        const { jobs, loading } = this.props;
     
 		if (loading) {
 			return(

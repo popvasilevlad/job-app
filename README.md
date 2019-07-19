@@ -4,37 +4,37 @@ Application made using npx create-react-app.
 
 
 
-Intructions: 
-
-    After cloning the repo, run the following command in order to install the dependecies:
-
-        npm install 
+Set up: 
 
 
-    For building the app:
+After cloning the repo, run the following command in order to install the dependecies:
 
-        npm run build
-
-
-    For launching the server:
-
-        npm run server
+    npm install 
 
 
+For building the app:
 
-    For launching the client app:
-
-        npm start
-
-
-    For concurrently running all of the above (build, server and client)
-
-        npm run all
+    npm run build
 
 
+For launching the server use the following command. The express server will run on port 8080
 
-    For running the teste
+    npm run server
+    
 
-        npm run test
+For launching the client app use the following command. The express server will run on port 3000
+
+    npm start
+
+
+For concurrently running all of the above (build, server and client)
+
+    npm run all
+
+
+
+For running the tests
+
+    npm run test
         
       

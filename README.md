@@ -3,13 +3,38 @@
 Application made using npx create-react-app.
 
 
-After cloning the repo, run the following command in order to install the dependecies:
 
-    npm install 
+Intructions: 
+
+    After cloning the repo, run the following command in order to install the dependecies:
+
+        npm install 
+
+
+    For building the app:
+
+        npm run build
+
+
+    For launching the server:
+
+        npm run server
 
 
 
+    For launching the client app:
 
-For launching the application:
+        npm start
 
-    npm start
+
+    For concurrently running all of the above (build, server and client)
+
+        npm run all
+
+
+
+    For running the teste
+
+        npm run test
+        
+      
